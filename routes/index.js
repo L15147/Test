@@ -67,6 +67,34 @@ router.post('/insertUser', upload.single('avatar'), function (req, res) {
     }
   })
 });
+router.post('/updateUser', upload.single('avatar'), function (req, res) {
+  console.log(req.body);
+  var connectUsers = db.model('users', user);
+  connectUsers({
+
+    password: req.body.password,
+    name: req.body.name,
+    address: req.body.address,
+    number_phone: req.body.number_phone,
+    avatar: path + req.file.filename + '.jpg'
+  }).update({username: req.body.username},function (error) {
+    if (error) {
+      res.render('index', {title: 'Express Loi!!!!'});
+    } else {
+      res.redirect("/");
+    }
+  })
+});
+// router.post('/:id', function (req, res) {
+//   console.log(req.body);
+//   var connectUsers = db.model('users', user);
+//   connectUsers.remove({_id: req.params.id}, function (error){
+//     if(error)
+//       throw error;
+//     else res.redirect("/")
+//     console.log("Xoa Thanh cong");
+//   })
+// });
 let baseJson = {
   errorCode : undefined,
   errorMessage: undefined,
