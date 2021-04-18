@@ -1,0 +1,62 @@
+
+<h1>Lab6 7</h1>
+    <div class="container">
+        <h2 class="text-center mt-0">Quản lí User</h2>
+        <hr class="divider my-4"/>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Chức năng</th>
+                    <th>Tài khoản</th>
+                    <th>Mật khẩu</th>
+                    <th>Họ và tên</th>
+                    <th>Địa chỉ</th>
+                    <th>SĐT & Email</th>
+                    <th>Avatar</th>
+                </tr>
+                </thead>
+                <tbody>
+                <form action="/insertUser" enctype="multipart/form-data" method="post">
+                    <tr>
+                        <td>
+                            <button type="submit">Save</button>
+                        </td>
+                        <td><input name="username" type="text" placeholder="Enter username...."></td>
+                        <td><input name="password" type="password" placeholder="Enter password...."></td>
+                        <td><input name="name" type="text" placeholder="Enter name...."></td>
+                        <td><input name="address" type="text" placeholder="Enter address...."></td>
+                        <td><input name="number_phone" type="text" placeholder="Enter number_phone...."></td>
+                        <td><input name="avatar" type="file"></td>
+                    </tr>
+
+
+                </form>
+                {{#each users}}
+                    <tr>
+                        <td>
+                            <form action="{{this.id}}" enctype="multipart/form-data" method="post">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+
+                        <td>{{this.username}}</td>
+                        <td>{{this.password}}</td>
+                        <td>{{this.name}}</td>
+                        <td>{{this.address}}</td>
+                        <td>{{this.number_phone}}</td>
+
+                    </tr>
+
+
+                {{/each}}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <a href="home.hbs">Home</a>
+
+
+</body>
+</html>
