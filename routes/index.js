@@ -48,10 +48,11 @@ router.get('/', function (req, res, next) {
             }
         })
 });
-
+router.get('/signUp', function (req, res, next){
+    res.render('dangNhap');
+})
 
 router.post('/insertUser', upload.single('avatar'), function (req, res) {
-    console.log(req.body);
     var connectUsers = db.model('users', user);
     connectUsers({
         username: req.body.username,
@@ -61,6 +62,7 @@ router.post('/insertUser', upload.single('avatar'), function (req, res) {
         number_phone: req.body.number_phone,
         avatar: req.file.filename
     }).save(function (error) {
+        if(conne)
         if (error) {
             res.render('index', {title: 'Express Loi!!!!'});
         } else {
@@ -92,6 +94,7 @@ let baseJson = {
     errorCode: undefined,
     errorMessage: undefined,
     data: undefined
+
 }
 
 router.get('/getUsers', function (req, res) {

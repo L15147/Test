@@ -29,10 +29,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">
                 <li class="nav-item">
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="DangNhap.html" style="margin-left: 15px">Tiếng Việt</a>
+
+                        <a class="btn btn-primary btn-xl rounded-pill mt-5" href="DangNhap.html" style="margin-left: 15px">Tiếng Việt</a>
+
                 </li>
                 <li class="nav-item">
-                    <a class="btn btn-primary btn-xl rounded-pill mt-5" href="DangNhap.html" style="margin-left: 15px">Đăng nhập</a>
+                    <form action="/signUp" enctype="multipart/form-data" method="get">
+                        <button type="submit">Đăng nhập</button>
+                    </form>
                 </li>
             </ul>
         </div>
@@ -75,11 +79,11 @@
                         <td>
                             <button type="submit">Save</button>
                         </td>
-                        <td><input name="username" type="text" placeholder="Enter username...."></td>
-                        <td><input name="password" type="password" placeholder="Enter password...."></td>
-                        <td><input name="name" type="text" placeholder="Enter name...."></td>
-                        <td><input name="address" type="text" placeholder="Enter address...."></td>
-                        <td><input name="number_phone" type="text" placeholder="Enter number_phone...."></td>
+                        <td><input name="username" type="text" placeholder="Enter username...." required></td>
+                        <td><input name="password" type="password" placeholder="Enter password...." required></td>
+                        <td><input name="name" type="text" placeholder="Enter name...." required></td>
+                        <td><input name="address" type="text" placeholder="Enter address...." required></td>
+                        <td><input name="number_phone" type="text" placeholder="Enter number_phone...." required></td>
                         <td><input name="avatar" type="file"></td>
                     </tr>
 
@@ -90,11 +94,11 @@
                         <td>
                             <button type="submit">Update</button>
                         </td>
-                        <td><input name="username" type="text" placeholder="Enter username...."></td>
-                        <td><input name="password" type="password" placeholder="Enter password...."></td>
-                        <td><input name="name" type="text" placeholder="Enter name...."></td>
-                        <td><input name="address" type="text" placeholder="Enter address...."></td>
-                        <td><input name="number_phone" type="text" placeholder="Enter number_phone...."></td>
+                        <td><input name="username" type="text" placeholder="Enter username...." required></td>
+                        <td><input name="password" type="password" placeholder="Enter password...." required></td>
+                        <td><input name="name" type="text" placeholder="Enter name...." required></td>
+                        <td><input name="address" type="text" placeholder="Enter address...." required></td>
+                        <td><input name="number_phone" type="text" placeholder="Enter number_phone...." required></td>
                         <td><input name="avatar" type="file"></td>
                     </tr>
 
