@@ -49,7 +49,10 @@ router.get('/', function (req, res, next) {
         })
 });
 router.get('/signUp', function (req, res, next){
-    res.render('dangNhap');
+    res.render('Add');
+})
+router.get('/formUpdate', function (req, res, next){
+    res.render('update');
 })
 
 router.post('/insertUser', upload.single('avatar'), function (req, res) {
